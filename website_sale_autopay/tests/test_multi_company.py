@@ -21,7 +21,6 @@ class TestMultiCompany(TransactionCase):
 
     def test_20_another_company(self):
         # This test requires multi_company installed and account periods configured
-        return
         order = self.env.ref('website_sale_autopay.sale_order_1')
         company = self.env.ref('multi_company.res_company_oerp_be', raise_if_not_found=False)
         for line in order.order_line:

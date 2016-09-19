@@ -23,19 +23,13 @@ class sale_order(models.Model):
     def _autopay(self, cr, uid, ids, context=None):
             # Keep old indent to don't touch git history
             r = self.browse(cr, uid, ids[0], context=context)
-            company = r.company_id
-            print 'order company', company.name
-            context = context.copy()
-            context['company_id'] = company.id
+            sale_order_company = r.company_id
+            user_company = self.pool['res.users'].browse(cr, uid, uid, context=context).company_id
             journal_id = r.payment_acquirer_id.journal_id.id or self.pool['account.invoice'].default_get(cr, uid, ['journal_id'], context=context)['journal_id']
 
-            original_company = r.partner_id.company_id
-            r.partner_id.company_id = r.company_id
             # [create invoice]
             res = self.pool['sale.order'].manual_invoice(cr, uid, [r.id], context)
             invoice_id = res['res_id']
-            print 'r', r
-            print 'res', res
 
             # [validate]
             self.pool['account.invoice'].signal_workflow(cr, uid, [invoice_id], 'invoice_open')
@@ -83,4 +77,6 @@ class sale_order(models.Model):
 
             # [pay]
             self.pool['account.voucher'].button_proforma_voucher(cr, uid, [voucher_id], context=voucher_context)
-            r.partner_id.company_id = original_company.id
+
+            # return user company to its original value
+            self.pool['res.users'].write(cr, uid, uid, {'company_id': user_company.id})
