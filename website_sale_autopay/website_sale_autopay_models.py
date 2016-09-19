@@ -23,8 +23,11 @@ class sale_order(models.Model):
     def _autopay(self, cr, uid, ids, context=None):
             # Keep old indent to don't touch git history
             r = self.browse(cr, uid, ids[0], context=context)
+
             sale_order_company = r.company_id
             user_company = self.pool['res.users'].browse(cr, uid, uid, context=context).company_id
+            self.pool['res.users'].write(cr, uid, uid, {'company_id': sale_order_company.id})
+
             journal_id = r.payment_acquirer_id.journal_id.id or self.pool['account.invoice'].default_get(cr, uid, ['journal_id'], context=context)['journal_id']
 
             # [create invoice]
