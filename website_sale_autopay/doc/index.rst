@@ -34,6 +34,7 @@ Configuration
 Usage
 =====
 
-Originally you need to create invoices manually every time after web sales.
-This module creates corresponding fully filled and confirmed invoices automatically.
-
+* Put some products in your shopping cart from website shop
+* Pay for them. You can use test paypal payments for that https://odoo-development.readthedocs.io/en/latest/dev/tests/paypal.html
+* From `Sale / Sale Order` find sale order representing your test shopping
+* You can see that the sale order have invoice and it is already in `paid` state
