@@ -16,10 +16,13 @@ Configuration
 * Install ``payment_`` module that you need to use in website shop, e.g. payment_paypal.
 * From ``Settings / Payments / Payment Acquirers`` create payment acquirers.
 
+  * In acquirer configuration select proper payment method
+
 * For multi-company:
 
   * Define company for eash of your products.
   * Create accounts from ``Settings / Configuration / Invoicing`` menu:
+
     * select template
     * select currency. WARNING: select the same currency for all companies
     * push ``[Apply]`` button
