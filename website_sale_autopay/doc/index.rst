@@ -20,7 +20,7 @@ Configuration
 
 * For multi-company:
 
-  * Define company for eash of your products.
+  * Define company for each of your products.
   * Create accounts from ``Settings / Configuration / Invoicing`` menu:
 
     * select template
