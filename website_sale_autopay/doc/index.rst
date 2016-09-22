@@ -5,10 +5,7 @@
 Installation
 ============
 
-* For multi-company only:
-
-  Install this module https://github.com/OCA/website/tree/8.0/website_sale_order_company
-  
+* For multi-company support install additional module: https://github.com/OCA/website/tree/8.0/website_sale_order_company
 
 Configuration
 =============
@@ -35,6 +32,6 @@ Usage
 =====
 
 * Put some products in your shopping cart from website shop
-* Pay for them. You can use test paypal payments for that https://odoo-development.readthedocs.io/en/latest/dev/tests/paypal.html
-* From `Sale / Sale Order` find sale order representing your test shopping
-* You can see that the sale order have invoice and it is already in `paid` state
+* Pay for them. You can use test paypal payments for that purpose https://odoo-development.readthedocs.io/en/latest/dev/tests/paypal.html
+* From ``Sale / Sale Order`` find sale order representing your test shopping
+* You can see that the sale order have invoice and it is already in ``paid`` state
