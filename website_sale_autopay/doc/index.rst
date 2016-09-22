@@ -18,11 +18,14 @@ Configuration
 
 * For multi-company:
 
-  Define company for eash of your products.
+  * Define company for eash of your products.
+  * Create accounts from ``Settings / Configuration / Invoicing`` menu:
+    * select template
+    * select currency. WARNING: select the same currency for all companies
+    * push ``[Apply]`` button
 
-  Create payment acquirers for each company you have.
-
-* In acquirer configuration select proper payment method
+  * Create payment acquirers for each company you have.
+    * In acquirer configuration select proper payment method
  
 Usage
 =====
