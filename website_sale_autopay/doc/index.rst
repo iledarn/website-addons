@@ -28,6 +28,7 @@ Configuration
     * push ``[Apply]`` button
 
   * Create payment acquirers for each company you have.
+
     * In acquirer configuration select proper payment method
  
 Usage
