@@ -34,6 +34,6 @@ Configuration
 Usage
 =====
 
-Originally you need to create invoices manually every time after web sales that is not convenient.
-This module creates corresponding fully filled and confirmed invoice automatically.
+Originally you need to create invoices manually every time after web sales.
+This module creates corresponding fully filled and confirmed invoices automatically.
 
